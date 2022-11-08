@@ -62,7 +62,8 @@ public class Producer {
                     ProducerRecord<String, String> record = null;
                     // TODO: Uncomment the appropriate option
                     // Option 1
-                    // record = new ProducerRecord(target, payload);
+                    
+                    //record = new ProducerRecord(target, payload);
                     // Option 2
                     // record = new ProducerRecord<>(topic, target, payload);
                     producer.send(record);
