@@ -32,12 +32,12 @@ public class Producer {
 
         // TODO: set up "channels" (option 1: topic names, option 2: key names)
         // MAKE THESE NAMES MAKE SENSE; DO NOT USE THE DEFAULTS
-        channels.add("ch1");
-        channels.add("ch2");
-        channels.add("ch3");
+        channels.add("ch001");
+        channels.add("ch002");
+        channels.add("ch003");
 
         // option 2: set topic name
-        //String topic = "";
+        String topic = "";
         
 
         File f = new File("smoker-temps.csv");
@@ -62,8 +62,9 @@ public class Producer {
                     ProducerRecord<String, String> record = null;
                     // TODO: Uncomment the appropriate option
                     // Option 1
+                   
                     
-                    //record = new ProducerRecord(target, payload);
+                    record = new ProducerRecord(target, payload);
                     // Option 2
                     // record = new ProducerRecord<>(topic, target, payload);
                     producer.send(record);
