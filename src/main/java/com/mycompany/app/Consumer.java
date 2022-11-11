@@ -1,6 +1,7 @@
 package com.mycompany.app;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -10,6 +11,18 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+/**
+ * Class: 44-517 Big Data
+ * Author: Niharica Myla
+ * Description: The project is about finding out the smokers and checking their temperature to find if they need attention or not as well as planning their particular meal temperature.
+ * Due: 11/11/2022
+ * I pledge that I have completed the programming assignment independently.
+   I have not copied the code from a student or any source.
+   I have not given my code to any other student.
+   I have not given my code to any other student and will not share this code
+   with anyone under any circumstances.
+*/
 
 public class Consumer {
 
@@ -30,7 +43,17 @@ public class Consumer {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, String> record: records)
             {
+                String a11 = record.value().substring(record.value().lastIndexOf(bootstrapServers));
+                String b11 = a11.substring(10);
+                double c11 = Double.parseDouble(b11);
+                System.out.println(c11);
                 System.out.println(record.topic() + ", " + record.key() + ", " + record.value());
+                ArrayList<Double> now = new ArrayList<Double>();
+                for (int i= 0; i< now.size(); i++) {
+                    now.add(c11);
+                    System.out.println(now.get(i));
+
+                }
             }
  
     }
