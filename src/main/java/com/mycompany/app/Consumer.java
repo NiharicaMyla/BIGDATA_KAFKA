@@ -53,10 +53,26 @@ public class Consumer {
                     now.add(c11);
                     System.out.println(now.get(i));
 
+                    if(record.key().equals("ch001")) {
+                        for(i= 0; i<now.size();i++){
+                            System.out.println(record.key()+now.get(now.size()-1));
+                            if(now.size()>5){
+                                if((now.get(i+5)-now.get(i))<10){
+                                    System.out.println("alert!");
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
  
     }
     
-}
-}
+}}
+    /*-
+%sql
+select Channel2 from smoker_temps where Channel1 < 65 and Time(UTC) < 2;
+
+
+ */
